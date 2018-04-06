@@ -1,2 +1,0 @@
-class EtherumAddress < ApplicationRecord
-end

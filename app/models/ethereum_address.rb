@@ -1,0 +1,2 @@
+class EthereumAddress < ApplicationRecord
+end
