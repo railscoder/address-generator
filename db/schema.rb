@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406102238) do
+ActiveRecord::Schema.define(version: 20180406104623) do
+
+  create_table "bitcoin_addresses", force: :cascade do |t|
+    t.string   "private_hex", null: false
+    t.string   "public_hex",  null: false
+    t.string   "address",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["address"], name: "index_bitcoin_addresses_on_address"
+  end
 
   create_table "etherum_addresses", force: :cascade do |t|
     t.string   "private_hex", null: false
@@ -19,6 +28,15 @@ ActiveRecord::Schema.define(version: 20180406102238) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["address"], name: "index_etherum_addresses_on_address"
+  end
+
+  create_table "litecoin_addresses", force: :cascade do |t|
+    t.string   "private_hex", null: false
+    t.string   "public_hex",  null: false
+    t.string   "address",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["address"], name: "index_litecoin_addresses_on_address"
   end
 
 end

@@ -1,0 +1,2 @@
+class BitcoinAddress < ApplicationRecord
+end

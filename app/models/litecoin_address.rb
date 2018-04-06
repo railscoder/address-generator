@@ -1,0 +1,2 @@
+class LitecoinAddress < ApplicationRecord
+end
