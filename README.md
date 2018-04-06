@@ -24,10 +24,10 @@ Things you may want to cover:
 * ...
 
 Generate ethereum addresses
-Ethereum::CreateAddressService.call(n), n - number of ethereum addresses
+rails runner "Ethereum::CreateAddressService.call(n)", n - number of ethereum addresses
 
 Generate bitcoin addresses
-Bitcoin::CreateAddressService.call(n), n - number of bitcoin addresses
+rails runner "Bitcoin::CreateAddressService.call(n)", n - number of bitcoin addresses
 
 Generate litecoin addresses
-Litecoin::CreateAddressService.call(n), n - number of litecoin addresses
+rails runner "Litecoin::CreateAddressService.call(n)", n - number of litecoin addresses

@@ -1,11 +1,9 @@
 class Litecoin::CreateAddressService < AddressService
   class << self
-    def call(number_of_addresses)
-      return unless number_of_addresses.is_a? Integer
-
+    def create(number_of_addresses)
       Bitcoin.network = :litecoin
 
-      file_with_adddresses = File.open("addresses/ltc/ltc-address-#{time}.txt", "w")
+      file_with_adddresses = File.open(path_to_file, "w")
       
       ActiveRecord::Base.transaction do
         1.upto(number_of_addresses) do
@@ -17,10 +15,6 @@ class Litecoin::CreateAddressService < AddressService
 
         file_with_adddresses.close
       end
-      
-      puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
-
-      puts "created #{number_of_addresses} litecoin addresses"
     end
   end
 end

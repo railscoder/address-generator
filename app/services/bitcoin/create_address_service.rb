@@ -1,9 +1,7 @@
 class Bitcoin::CreateAddressService < AddressService
   class << self
-    def call(number_of_addresses)
-      return unless number_of_addresses.is_a? Integer
-
-      file_with_adddresses = File.open("addresses/btc/btc-address-#{time}.txt", "w")
+    def create(number_of_addresses)
+      file_with_adddresses = File.open(path_to_file, "w")
 
       ActiveRecord::Base.transaction do
         1.upto(number_of_addresses) do
@@ -15,10 +13,6 @@ class Bitcoin::CreateAddressService < AddressService
 
         file_with_adddresses.close
       end
-
-      puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
-      
-      puts "created #{number_of_addresses} bitcoin addresses"
     end
   end
 end
