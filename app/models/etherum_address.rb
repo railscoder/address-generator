@@ -1,0 +1,2 @@
+class EtherumAddress < ApplicationRecord
+end
