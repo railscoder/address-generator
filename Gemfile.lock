@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/EthWorks/ethereum.rb.git
+  revision: a87a2454578bf56699ed3c46d198efd37a5ee9d4
+  ref: a87a2454578bf56699ed3c46d198efd37a5ee9d4
+  branch: master
+  specs:
+    ethereum.rb (2.1.8)
+      activesupport (~> 5.0)
+      digest-sha3 (~> 1.1)
+
+GIT
   remote: https://github.com/lian/bitcoin-ruby
   revision: a3fffe07505ea8e0c11dac548ae0dda0f8168f12
   branch: master
@@ -145,6 +155,7 @@ GEM
       tilt (>= 1.1, < 3)
     scrypt (3.0.5)
       ffi-compiler (>= 1.0, < 2.0)
+    settingslogic (2.0.9)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -185,12 +196,14 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   eth
+  ethereum.rb!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   puma (~> 3.0)
   rails (~> 5.0.4)
   sass-rails (~> 5.0)
+  settingslogic
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

@@ -23,11 +23,11 @@ Things you may want to cover:
 
 * ...
 
-Generate ethereum addresses
+Generate ethereum addresses:
 rails runner "Ethereum::CreateAddressService.call(n)", n - number of ethereum addresses
 
-Generate bitcoin addresses
+Generate bitcoin addresses:
 rails runner "Bitcoin::CreateAddressService.call(n)", n - number of bitcoin addresses
 
-Generate litecoin addresses
+Generate litecoin addresses:
 rails runner "Litecoin::CreateAddressService.call(n)", n - number of litecoin addresses

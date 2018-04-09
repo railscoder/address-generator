@@ -6,7 +6,7 @@ class Litecoin::CreateAddressService < AddressService
       file_with_adddresses = File.open(path_to_file, "w")
       
       ActiveRecord::Base.transaction do
-        1.upto(number_of_addresses) do
+        number_of_addresses.times do
           key = Bitcoin::generate_key
           address = Bitcoin::pubkey_to_address(key[1])
           LitecoinAddress.create(private_hex: key[0], public_hex: key[1], address: address)

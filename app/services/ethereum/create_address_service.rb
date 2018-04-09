@@ -4,7 +4,7 @@ class Ethereum::CreateAddressService < AddressService
       file_with_adddresses = File.open(path_to_file, "w")
 
       ActiveRecord::Base.transaction do
-        1.upto(number_of_addresses) do
+        number_of_addresses.times do
           key = Eth::Key.new
           EthereumAddress.create(private_hex: key.private_hex, public_hex: key.public_hex, address: key.address)
           file_with_adddresses.puts key.address
