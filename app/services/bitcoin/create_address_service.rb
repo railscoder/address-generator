@@ -1,7 +1,7 @@
 class Bitcoin::CreateAddressService < AddressService
   class << self
     def create(number_of_addresses)
-      Bitcoin.network = :testnet3
+      Bitcoin.network = :bitcoin
 
       file_with_adddresses = File.open(path_to_file, "w")
 

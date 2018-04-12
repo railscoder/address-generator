@@ -13,11 +13,13 @@
 ActiveRecord::Schema.define(version: 20180406104623) do
 
   create_table "bitcoin_addresses", force: :cascade do |t|
-    t.string   "private_hex", null: false
-    t.string   "public_hex",  null: false
-    t.string   "address",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "private_hex",                     null: false
+    t.string   "public_hex",                      null: false
+    t.string   "address",                         null: false
+    t.float    "amount",          default: 0.0
+    t.boolean  "funds_withdrawn", default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["address"], name: "index_bitcoin_addresses_on_address"
   end
 
@@ -33,11 +35,13 @@ ActiveRecord::Schema.define(version: 20180406104623) do
   end
 
   create_table "litecoin_addresses", force: :cascade do |t|
-    t.string   "private_hex", null: false
-    t.string   "public_hex",  null: false
-    t.string   "address",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "private_hex",                     null: false
+    t.string   "public_hex",                      null: false
+    t.string   "address",                         null: false
+    t.float    "amount",          default: 0.0
+    t.boolean  "funds_withdrawn", default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["address"], name: "index_litecoin_addresses_on_address"
   end
 
