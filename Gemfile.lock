@@ -57,6 +57,10 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     bindex (0.5.0)
+    blockchain (3.0.1)
+    blockcypher-ruby (0.2.4)
+      bitcoin-ruby (~> 0.0.5)
+      ffi
     builder (3.2.3)
     byebug (10.0.2)
     coffee-rails (4.2.2)
@@ -66,6 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    coinbase (4.1.0)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     digest-sha3 (1.1.0)
@@ -193,8 +198,11 @@ PLATFORMS
 
 DEPENDENCIES
   bitcoin-ruby!
+  blockchain
+  blockcypher-ruby
   byebug
   coffee-rails (~> 4.2)
+  coinbase
   eth
   ethereum.rb!
   jbuilder (~> 2.5)
