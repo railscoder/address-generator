@@ -5,7 +5,7 @@ class  CryptoClient
   include Bitcoin::Builder
 
   RATE = 10**8
-  FEE = 30000
+  FEE = 100000
 
   def initialize(network = "main", currency = "btc")
     @cypher = BlockCypher::Api.new(network: network, currency: currency, api_token: Settings.api_token)
@@ -68,8 +68,6 @@ class  CryptoClient
     verify_signatures = prev_txs.each_with_index.map { |prev_tx, i| tx.verify_input_signature(i, prev_tx) }
     
     verify = verify_signatures.uniq.join == "true"
-
-    puts tx.to_json
 
     return tx, verify
   end
