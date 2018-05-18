@@ -1,13 +1,15 @@
-class EthereumClient < Ethereum::HttpClient
+class EthereumClient < Ethereum::IpcClient
 
   WEI_IN_ETHER = 10**18
-  GAS_PRICE = 40_000_000_000
-  GAS_LIMIT = 21_000
 
-  def initialize
-    super(Settings.test_ethereum_node)
-    @gas_price = GAS_PRICE
-    @gas_limit = GAS_LIMIT
+  DEFAULT_GAS_LIMIT = 100_000
+
+  DEFAULT_GAS_PRICE = 12_000_000_000
+
+  def initialize(path)
+    super(path)
+    @gas_price = DEFAULT_GAS_PRICE
+    @gas_limit = DEFAULT_GAS_LIMIT
   end
 
   def get_balance(address)
@@ -22,5 +24,9 @@ class EthereumClient < Ethereum::HttpClient
   	rescue
   	  puts "Transaction failed"
   	end
+  end
+
+  def set_contract(name, address, abi)
+    Ethereum::Contract.create(name: name, address: address, abi: abi, client: self)
   end
 end

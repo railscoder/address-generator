@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180406104623) do
     t.string   "public_hex",                      null: false
     t.string   "address",                         null: false
     t.float    "amount",          default: 0.0
+    t.float    "token_amount",    default: 0.0
+    t.string   "tx_id"
     t.boolean  "funds_withdrawn", default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
