@@ -4,12 +4,12 @@ class Ethereum::SendTokenService
       client = EthereumClient.new(Settings.path)
       contract = client.set_contract(Settings.name, Settings.address, Settings.abi)
       contract.sender = Settings.sender
-      60.times do 
-        EthereumAddress.where(tx_id: nil).limit(200).each do |eth|
+      884.times do 
+        EthereumAddress.where(tx_id: nil).limit(30).each do |eth|
           response = contract.transact.transfer(eth.address, eth.token_amount.to_i)
           eth.update(tx_id: response.id)
         end
-        sleep(120)
+        sleep(60)
       end
     end
 
@@ -29,8 +29,10 @@ class Ethereum::SendTokenService
           amount = distrib[1]
           ta = total/amount
           amount.times do
-            ta = total/amount
-            token_array.push(rand(ta/10..ta*2))
+            r = rand(0..8)
+            decimal = rand(0..10**r)*(10**(18-r))
+            decimal_ta = rand(ta/10..ta*2) * (10**18) + decimal
+            token_array.push(decimal_ta.to_s)
           end
         end
         return token_array.shuffle

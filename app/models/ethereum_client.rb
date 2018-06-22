@@ -4,7 +4,7 @@ class EthereumClient < Ethereum::IpcClient
 
   DEFAULT_GAS_LIMIT = 100_000
 
-  DEFAULT_GAS_PRICE = 12_000_000_000
+  DEFAULT_GAS_PRICE = 2_000_000_000
 
   def initialize(path)
     super(path)
